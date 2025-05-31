@@ -23,7 +23,7 @@ class Cliente(base):
 class Fornecedor(base):
     __tablename__ = "fornecedor"
     
-    registro_fornecedor = sa.Column(sa.INTEGER, primary_key=True, index=True)
+    registro = sa.Column(sa.INTEGER, primary_key=True, index=True)
     nome_fantasia = sa.Column(sa.VARCHAR(50), nullable=False)
     razao_social = sa.Column(sa.VARCHAR(100), nullable=False)
     cidade = sa.Column(sa.VARCHAR(50))
@@ -35,8 +35,8 @@ class Produto(base):
     __tablename__ = "produto"
     
     codBarras = sa.Column(sa.Integer, primary_key=True, index=True)
-    registro_fornecedor = sa.Column(sa.Integer, sa.ForeignKey("fornecedor.registro_fornecedor", ondelete="no action", onupdate="cascade"), index=True)
-    dsc_produto = sa.Column(sa.VARCHAR(100), nullable=False)
+    registro = sa.Column(sa.Integer, sa.ForeignKey("fornecedor.registro", ondelete="no action", onupdate="cascade"), index=True)
+    dscProduto = sa.Column(sa.VARCHAR(100), nullable=False)
     genero = sa.Column(sa.VARCHAR(1))
 
 #Tabela de Vendedores
@@ -44,11 +44,11 @@ class Produto(base):
 class Vendedor(base):
     __tablename__ = "vendedor"
     
-    registro_vendedor = codBarras = sa.Column(sa.Integer, primary_key=True, index=True)
+    registro_vendedor = sa.Column(sa.Integer, primary_key=True, index=True)
     cpf = sa.Column(sa.CHAR(14), nullable=False)
     nome = sa.Column(sa.VARCHAR(100), nullable=False)
-    email = sa.Column(sa.VARCHAR(50), nullable=False)
     genero = sa.Column(sa.VARCHAR(1))
+    email = sa.Column(sa.VARCHAR(50))
 
 #Tabela de Vendas
 
@@ -59,9 +59,11 @@ class Venda(base):
     cpf = sa.Column(sa.CHAR(14), sa.ForeignKey("cliente.cpf", ondelete="no action", onupdate="cascade"), index=True)
     registro_vendedor = sa.Column(sa.Integer, sa.ForeignKey("vendedor.registro_vendedor", ondelete="no action", onupdate="cascade"), index=True)
     codBarras = sa.Column(sa.Integer, sa.ForeignKey("produto.codBarras", ondelete="no action", onupdate="cascade"), index=True)
+    dia_hora_venda = sa.Column(sa.DATETIME, nullable = False)
+    vlrVenda = sa.Column(sa.DECIMAL(10,2), nullable = False)
 
 try:
         base.metadata.create_all(engine)
         print("Tabelas criadas com sucesso!")
 except ValueError as e:
-        ValueError("Erro ao criar tabelas: ", e)
+        print(f"ERRO CRÍTICO ao criar tabelas em vendas.py: {e}")
