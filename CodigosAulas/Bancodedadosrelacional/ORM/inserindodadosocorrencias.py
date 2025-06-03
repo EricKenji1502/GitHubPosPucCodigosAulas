@@ -10,7 +10,7 @@ responsavelDP = pd.read_excel(endereco + "\\ResponsavelDP.xlsx")
 municipio = pd.read_csv(endereco + "\\Municipio.csv", sep=",")
 ocorrencias = pd.read_excel(endereco + "\\ocorrencias.xlsx")
 
-engine = sa.create_engine("sqlite:///ocorrencias.db")
+engine = sa.create_engine("sqlite:///C:\\Users\\erick\\Desktop\\GitHubPosPUC\\CodigosAulas\\Bancodedadosrelacional\\ORM\\BD\\ocorrencias.db")
 Sessao = orm.sessionmaker(bind=engine)
 sessao = Sessao()
 

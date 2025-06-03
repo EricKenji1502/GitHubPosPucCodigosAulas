@@ -1,7 +1,7 @@
 import sqlalchemy as sa
 import sqlalchemy.orm as orm
 
-engine = sa.create_engine("sqlite:///vendas.db")
+engine = sa.create_engine("sqlite:///C:\\Users\\erick\\Desktop\\GitHubPosPUC\\CodigosAulas\\Bancodedadosrelacional\\ORM\\BD\\vendas.db")
 base = orm.declarative_base()
 
 #Tabela de Clientes
