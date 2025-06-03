@@ -44,7 +44,7 @@ class Produto(base):
 class Vendedor(base):
     __tablename__ = "vendedor"
     
-    registro_vendedor = sa.Column(sa.Integer, primary_key=True, index=True)
+    registro_vendedor = registro_venderdor = sa.Column(sa.Integer, primary_key=True, index=True)
     cpf = sa.Column(sa.CHAR(14), nullable=False)
     nome = sa.Column(sa.VARCHAR(100), nullable=False)
     genero = sa.Column(sa.VARCHAR(1))

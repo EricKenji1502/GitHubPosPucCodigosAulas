@@ -15,7 +15,7 @@ class reponsaveldp(base):
     __tablename__ = "tbResponsavelDP"
 
     codDP = sa.Column(sa.Integer, primary_key=True, index=True)
-    nome = sa.Column(sa.VARCHAR(100), nullable=False)
+    delegado = sa.Column(sa.VARCHAR(100), nullable=False)
 
 class municipio(base):
     __tablename__ = "tbMunicipio"
