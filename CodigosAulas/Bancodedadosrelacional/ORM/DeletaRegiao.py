@@ -1,7 +1,7 @@
 import sqlalchemy as sa
 import ocorrencias as oc
 
-engine = sa.create_engine("sqlite:///C:\\Users\\erick\\Desktop\\GitHubPosPUC\\CodigosAulas\\Bancodedadosrelacional\\ORM\\BD\\ocorrencias.db")
+engine = sa.create_engine("sqlite:///CodigosAulas\\Bancodedadosrelacional\\ORM\\BD\\ocorrencias.db")
 
 metadata = sa.MetaData()
 sa.MetaData.reflect(metadata, bind=engine)

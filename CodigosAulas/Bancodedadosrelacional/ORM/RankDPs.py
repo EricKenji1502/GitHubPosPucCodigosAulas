@@ -3,7 +3,7 @@ import sqlalchemy as sa
 import sqlalchemy.orm as orm
 import ocorrencias as oc
 
-engine = sa.create_engine('sqlite:///C:\\Users\\erick\\Desktop\\GitHubPosPUC\\CodigosAulas\\Bancodedadosrelacional\\ORM\\BD\\ocorrencias.db')
+engine = sa.create_engine('sqlite:///CodigosAulas\\Bancodedadosrelacional\\ORM\\BD\\ocorrencias.db')
 Sessao = orm.sessionmaker(bind=engine)
 sessao = Sessao()
 

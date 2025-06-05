@@ -3,6 +3,7 @@ import sqlalchemy as sa
 import sqlalchemy.orm as orm
 import vendas as vd
 
+#Modificar de acordo com seu PC
 endereco = "C:\\Users\\erick\\Desktop\\GitHubPosPUC\\CodigosAulas\\Bancodedadosrelacional\\Dados\\Exemplo"
 
 vendedor = pd.read_csv(endereco + "\\vendedor.csv", sep=";")

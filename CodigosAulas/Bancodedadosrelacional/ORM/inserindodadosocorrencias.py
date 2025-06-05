@@ -3,6 +3,7 @@ import sqlalchemy as sa
 import sqlalchemy.orm as orm
 import ocorrencias as oc
 
+#Modificar de acordo com seu PC
 endereco = "C:\\Users\\erick\\Desktop\\GitHubPosPUC\\CodigosAulas\\Bancodedadosrelacional\\Dados\\Exercício"
 
 dp = pd.read_csv(endereco + "\\DP.csv", sep=",")
